@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace="com.spring.mapper.RoomMapper">
+ 
+    <resultMap type="com.spring.dto.RoomDTO" id="RoomResultList">
+        <result property="id" column="id" />
+        <result property="subject" column="subject" />
+        <result property="master" column="master" />
+    </resultMap>
+    
+    <select id="selectRooms" resultMap="RoomResultList">
+        SELECT id, subject, master FROM room
+    </select>
+    
+    <select id="selectRoomInfo" resultType="com.spring.dto.RoomDTO">
+        SELECT id, subject, master FROM room where id = #{id}
+    </select>
+
+ 	<select id="countColumns" resultType ="int">
+ 		SELECT count(*) FROM room
+ 	</select>
+
+    <insert id="InsertRoom" parameterType="com.spring.dto.RoomDTO">
+        INSERT into room (id, subject, master) values(#{id}, #{subject}, #{master})
+    </insert>
+    
+    <delete id="DeleteRoom" parameterType="int">
+    	Delete from room where id = #{roomId};
+    </delete>
+    
+     <insert id="make" parameterType="com.spring.dto.RoomDTO">
+        INSERT into room (id) values(#{id})
+    </insert>
+    
+    
+   
+</mapper>

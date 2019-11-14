@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace="com.spring.mapper.NoticeMapper">
+
+    <resultMap type="com.spring.dto.NoticeVO" id="NoticeResultList">
+        <result property="id" column="id" />
+        <result property="comment" column="comment" />
+    </resultMap>
+    
+    <select id="SelectNotices" resultMap="NoticeResultList">
+        SELECT id,comment FROM notice ORDER BY id DESC LIMIT 3
+    </select>
+     
+    <insert id="InsertNotice" parameterType="String">
+        INSERT into notice (comment) values(#{comment})
+    </insert>
+    
+</mapper>

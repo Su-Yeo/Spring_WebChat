@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace="com.spring.mapper.MemberMapper">
+ 
+    <resultMap type="com.spring.dto.MemberVO" id="TestResultList">
+        <result property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="pw" column="pw" />
+    </resultMap>
+ 
+    <select id="login" resultType="com.spring.dto.MemberVO">
+        SELECT id,name
+        from member
+        where id = #{id}
+        	and pw = #{pw}
+    </select>
+    
+    <select id="IdCheck" parameterType="String" resultType="String">
+        SELECT id
+        from member
+        where id = #{id}
+    </select>
+ 
+ 
+    <insert id="join" parameterType="com.spring.dto.MemberVO">
+        INSERT into member (id, pw, name) values(#{id}, #{pw}, #{name})
+    </insert>
+     
+    
+</mapper>

@@ -1,0 +1,36 @@
+﻿@charset "UTF-8";
+
+	body{
+		background-color : "#fcfcfc";
+	}
+     .mkroomButton{
+	    width:100px;
+	    height:50px;
+	     background-color: #00AE8E;
+	    border: none;
+	    color:#fff;
+	    padding: 15px 0;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 15px;
+	    margin: 4px;
+	    cursor: pointer;
+	    border-radius:10px;
+      }
+      
+      .inButton{
+        width:50px;
+        height:23px;
+      	background-color: #00AE8E;
+	    border: none;
+	    color:#fff;
+	    padding: 5px 0;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 11px;
+	    margin: 4px;
+	    cursor: pointer;
+	    border-radius:10px;
+      }
